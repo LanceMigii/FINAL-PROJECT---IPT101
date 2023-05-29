@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center; /* Center the container horizontally */
+      align-items: center; /* Center the container vertically */
+      height: 100vh;
+    }
+
+    .middle {
+      flex-grow: 1;
+      background-color: rgba(4, 138, 114, 1);
+      height: 100vh;
+    }
+
+    .left,
+    .right {
+      width: 10%;
+      background-color: rgba(4, 138, 114, 0.7);
+      height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      padding: 10px;
+    }
+
+    #login {
+      width: 400px;
+      margin: auto;
+      margin-top: 60px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(6, 91, 74, 0.7); /* Add a subtle box-shadow */
+    }
+
+    #submitButton {
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 350px;
+      padding: 13px;
+      border: 1px solid #048A72;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+
+    input[type="submit"] {
+      width: 50%;
+      padding: 13px;
+      border: 1px solid #048A72;
+      background-color: rgba(55, 243, 209, 0.5);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      text-align: center;
+      color: black;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #048A72;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left"></div>
+    <div class="middle">
+      <div id="login">
+        <h1>User Login</h1>
+        <p>Your Detector.Ai account lets you utilize the tools easily.</p>
+        <form action="/login" method="post" onsubmit="redirectToApi()">
+          <input type="text" name="username" id="username" placeholder="Username" required><br><br>
+          <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+          <div id="submitButton">
+            <input type="submit" value="Login">
+            <br>
+            <p>Don't have an account? <a href="/registration">Register</a></p>
+            <script>
+              function redirectToApi() {
+                window.location.href = '/api-page.html';
+              }
+            </script>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>
